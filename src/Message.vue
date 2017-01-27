@@ -101,7 +101,9 @@ export default {
   },
 
   destroyed () {
-    this.$el.remove()
+    if (this.$el.parentNode) {
+      this.$el.parentNode.removeChild(this.$el)
+    }
   },
 
   computed: {
